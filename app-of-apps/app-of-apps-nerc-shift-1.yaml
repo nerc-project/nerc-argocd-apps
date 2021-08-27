@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nerc-app-of-apps-nerc-shift-1
+spec:
+  destination:
+    namespace: argocd
+    name: nerc-infra
+  project: nerc
+  source:
+    path: envs/nerc/nerc-shift-1
+    repoURL: https://github.com/nerc-project/nerc-argocd-apps.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Validate=false
+    - ApplyOutOfSyncOnly=true

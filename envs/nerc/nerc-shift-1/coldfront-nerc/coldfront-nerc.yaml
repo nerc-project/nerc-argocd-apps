@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: coldfront-nerc
+spec:
+  destination:
+    name: nerc-shift-1
+    namespace: coldfront
+  project: nerc-front-of-house
+  source:
+    path: k8s/overlays/desktop
+    repoURL: https://github.com/nerc-project/coldfront-nerc.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Validate=false
+    - ApplyOutOfSyncOnly=true
