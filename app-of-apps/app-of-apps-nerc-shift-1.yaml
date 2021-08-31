@@ -5,12 +5,12 @@ metadata:
 spec:
   destination:
     namespace: argocd
-    name: nerc-infra
-  project: nerc
+    server: 'https://kubernetes.default.svc'
+  project: default
   source:
     path: envs/nerc/nerc-shift-1
     repoURL: https://github.com/nerc-project/nerc-argocd-apps.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
