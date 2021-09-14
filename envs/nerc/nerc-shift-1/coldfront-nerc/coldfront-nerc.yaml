@@ -4,13 +4,13 @@ metadata:
   name: coldfront-nerc
 spec:
   destination:
-    name: nerc-shift-1
-    namespace: coldfront
-  project: nerc-front-of-house
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  project: default
   source:
-    path: k8s/overlays/desktop
+    path: k8s/overlays/prod
     repoURL: https://github.com/nerc-project/coldfront-nerc.git
-    targetRevision: HEAD
+    targetRevision: main
   syncPolicy:
     automated:
       prune: true
