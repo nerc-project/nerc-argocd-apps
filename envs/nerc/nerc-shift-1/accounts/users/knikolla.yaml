@@ -1,0 +1,8 @@
+apiVersion: user.openshift.io/v1
+fullName: Kristi Nikolla
+groups: null
+identities:
+  - github:4123322
+kind: User
+metadata:
+  name: knikolla
