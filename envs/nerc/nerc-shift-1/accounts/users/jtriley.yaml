@@ -1,7 +1,8 @@
 apiVersion: user.openshift.io/v1
+fullName: Justin Riley
 groups: null
 identities:
-- github:8989161
+  - github:46910
 kind: User
 metadata:
-  name: aabaris
+  name: jtriley
